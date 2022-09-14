@@ -1,3 +1,31 @@
 .search-input {
-    
+    height: 100px;
+    width: 80vw;
+
+    form {
+        position: relative;
+        display: flex;
+        height: 40px;
+        // background-color: blueviolet;
+    }
+
+    &__textbox {
+        position: relative;
+        top: 0px;
+        height: 100%;
+        width: 80%;
+        border-width: 0px;
+        border-radius: 8px 0px 0px 8px;
+        font-size: 3rem;
+    }
+
+    &__button {
+        position: relative;
+        top: 0px;
+        height: 100%;
+        width: 20%;
+        border-width: 0px;
+        border-radius: 0px 8px 8px 0px;
+        background-color: cadetblue;
+    }
 }

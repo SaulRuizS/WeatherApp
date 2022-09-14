@@ -1,6 +1,12 @@
 .forecast-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 90%;
     width: 60px;
     border-radius: 8px;
     background-color: aliceblue;
+    font-family: sans-serif;
+    font-size: 2rem;
 }
