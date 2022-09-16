@@ -6,9 +6,9 @@ import useGetCurrentDayData from '../hooks/useGetCurrentDayData';
 
 const App = () => {
 
-    const currentDayData:object = useGetCurrentDayData();
+    // const currentDayData:object = useGetCurrentDayData();
 
-    console.log(currentDayData);
+    // console.log(currentDayData);
     
     return (
         <div className='app'>

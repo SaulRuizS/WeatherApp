@@ -12,8 +12,10 @@ const useGetCurrentDayData = () => {
         }
     };
 
+    let query:string = 'monterrey';
+
     useEffect(() => {
-        fetch('https://weatherapi-com.p.rapidapi.com/current.json?q=monterrey', options)
+        fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=${query}`, options)
 	    .then(response => response.json())
 	    .then(response => setCurrentDayData(response))
 	    .catch(err => console.error(err));
