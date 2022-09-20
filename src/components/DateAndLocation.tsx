@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../assets/styles/DateAndLocation.scss';
+import AppContext from './appContext';
 
 const DateAndLocation = () => {
     
+    const currentDayData = useContext(AppContext);
+
+    console.log(currentDayData);
+
     let day:string = 'Monday';
     let date:string = 'September 12';
     let location:string = 'Monterrey, Mexico';

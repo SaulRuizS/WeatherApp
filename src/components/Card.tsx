@@ -8,14 +8,6 @@ import useGetCurrentDayData from '../hooks/useGetCurrentDayData';
 
 const Card = () => {
 
-    const currentDayData:object = useGetCurrentDayData();
-
-    // const currentTempearure:number = currentDayData.current.temp_c;
-
-    // console.log(currentTempearure);
-
-    console.log(currentDayData);
-
     return (
         <div className='card'>
             <DateAndLocation />
