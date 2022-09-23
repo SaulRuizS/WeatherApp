@@ -8,9 +8,9 @@ const DateAndLocation = () => {
 
     console.log(currentDayData);
 
-    let day:string = 'Monday';
-    let date:string = 'September 12';
-    let location:string = 'Monterrey, Mexico';
+    let day = 'Monday';
+    let date = 'September 12';
+    let location = 'Monterrey, Mexico';
 
     return (
         <div className='date-and-location'>
