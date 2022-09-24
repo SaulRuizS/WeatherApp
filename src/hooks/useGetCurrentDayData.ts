@@ -14,15 +14,40 @@ const useGetCurrentDayData = () => {
           'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
         }
     };
+    interface Data {
+        location: Location,
+        current: Current,
+        condition: Condition,
+    }
+    interface Location {
+        name: string,
+        region: string,
+        country: string,
+        localtime: string,
+    }
 
-    let query = 'monterrey';
+    interface Current {
+        temp_c: number,
+        temp_f: number,
+        is_day: number,
+        wind_kph: number,
+        humidity: number,
+        condition: Condition,
+    }
+
+    interface Condition {
+        text: string,
+        icon: string,
+    }
 
     useEffect(() => {
-        axios.request(options).then(function (response) {
-            console.log(response);
-        }).catch(function (error) {
-            console.error(error);
-        });
+            const fetchData = async () => {
+                const response = await axios.request(options)
+                const dataFetched: Data = response.data;
+                // console.log(dataFetched);
+                setCurrentDayData(dataFetched);
+            };
+            fetchData();
     },[]);
 
     return currentDayData;
