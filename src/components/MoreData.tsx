@@ -3,9 +3,9 @@ import '../assets/styles/MoreData.scss';
 
 const MoreData = () => {
 
-    let humidity:number = 0;
-    let wind:number = 0;
-    let precipitation:number = 0;
+    let humidity= 0;
+    let wind= 0;
+    let precipitation= 0;
 
     return (
         <div className='more-data'>

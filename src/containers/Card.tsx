@@ -1,10 +1,9 @@
 import React from 'react';
-import DateAndLocation from './DateAndLocation';
-import Temperature from './Temperature';
-import MoreData from './MoreData';
-import Forecast from './Forecast';
+import DateAndLocation from '../components/DateAndLocation';
+import Temperature from '../components/Temperature';
+import MoreData from '../components/MoreData';
+import ForecastSection from '../containers/ForecastSection';
 import '../assets/styles/Card.scss';
-import useGetCurrentDayData from '../hooks/useGetCurrentDayData';
 
 const Card = () => {
 
@@ -13,7 +12,7 @@ const Card = () => {
             <DateAndLocation />
             <Temperature />
             <MoreData />
-            <Forecast />
+            <ForecastSection />
         </div>
     );
 };

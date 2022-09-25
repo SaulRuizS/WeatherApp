@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import '../assets/styles/DateAndLocation.scss';
-import AppContext from './appContext';
+import AppContext from '../context/appContext';
+import { Data } from '../models/CurrentDayData.model';
 
 const DateAndLocation = () => {
     

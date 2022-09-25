@@ -3,8 +3,8 @@ import '../assets/styles/ForecastCard.scss';
 
 const ForecastCard = () => {
 
-    let date:string = 'Tuesday';
-    let temperature:number = 0;
+    let date = 'Tuesday';
+    let temperature = 0;
     let degree:'°C'|'°F';
     degree = '°C';
 

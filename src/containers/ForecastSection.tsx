@@ -1,8 +1,8 @@
 import React from 'react';
-import ForecastCard from './ForecastCard';
+import ForecastCard from '../components/ForecastCard';
 import '../assets/styles/Forecast.scss';
 
-const Forecast = () => {
+const ForecastSection = () => {
     return (
         <div className='forecast'>
             <ForecastCard />
@@ -12,4 +12,4 @@ const Forecast = () => {
     );
 };
 
-export default Forecast;
+export default ForecastSection;

@@ -1,9 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Data, Location, Current, Condition } from "../models/CurrentDayData.model";
 
 const useGetCurrentDayData = () => {
 
-    const [ currentDayData, setCurrentDayData ] = useState({});
+
+    const [ currentDayData, setCurrentDayData ] = useState({
+        location: {},
+        current: {},
+        condition: {},
+    });
 
     const options = {
         method: 'GET',
@@ -14,40 +20,15 @@ const useGetCurrentDayData = () => {
           'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
         }
     };
-    interface Data {
-        location: Location,
-        current: Current,
-        condition: Condition,
-    }
-    interface Location {
-        name: string,
-        region: string,
-        country: string,
-        localtime: string,
-    }
 
-    interface Current {
-        temp_c: number,
-        temp_f: number,
-        is_day: number,
-        wind_kph: number,
-        humidity: number,
-        condition: Condition,
-    }
-
-    interface Condition {
-        text: string,
-        icon: string,
-    }
+    const fetchData = async () => {
+        const response = await axios.request(options)
+        const dataFetched: Data = await response.data;
+        setCurrentDayData(dataFetched);
+    };
 
     useEffect(() => {
-            const fetchData = async () => {
-                const response = await axios.request(options)
-                const dataFetched: Data = response.data;
-                // console.log(dataFetched);
-                setCurrentDayData(dataFetched);
-            };
-            fetchData();
+        fetchData();
     },[]);
 
     return currentDayData;
