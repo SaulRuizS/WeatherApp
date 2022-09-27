@@ -1,17 +1,21 @@
 import React, { useContext } from 'react';
 import '../assets/styles/DateAndLocation.scss';
-import AppContext from '../context/appContext';
-import { Data } from '../models/CurrentDayData.model';
+import useGetCurrentDayData from '../hooks/useGetCurrentDayData';
+// import AppContext from '../context/appContext';
+// import { CurrentDayData } from '../models/CurrentDayData.model';
 
 const DateAndLocation = () => {
     
-    const currentDayData = useContext(AppContext);
+    // const currentDayData:CurrentDayData = useContext(AppContext);
 
-    console.log(currentDayData);
+    const currentDayData = useGetCurrentDayData();
+
+
+    // console.log(currentDayData);
 
     let day = 'Monday';
-    let date = 'September 12';
-    let location = 'Monterrey, Mexico';
+    let date = currentDayData.location.localtime;
+    let location = currentDayData.location.name + ' ' + currentDayData.location.country;
 
     return (
         <div className='date-and-location'>

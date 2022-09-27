@@ -1,7 +1,6 @@
-export interface Data {
+export interface CurrentDayData {
     location: Location,
     current: Current,
-    condition: Condition,
 }
 export interface Location {
     name: string,

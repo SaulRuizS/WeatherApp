@@ -1,14 +1,27 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Data, Location, Current, Condition } from "../models/CurrentDayData.model";
+import { CurrentDayData } from "../models/CurrentDayData.model";
 
-const useGetCurrentDayData = () => {
-
+const useGetCurrentDayData = ():CurrentDayData => {
 
     const [ currentDayData, setCurrentDayData ] = useState({
-        location: {},
-        current: {},
-        condition: {},
+        location: {
+            name: '',
+            region: '',
+            country: '',
+            localtime: '',
+        },
+        current: {
+            temp_c: 0,
+            temp_f: 0,
+            is_day: 0,
+            wind_kph: 0,
+            humidity: 0,
+            condition: {
+                text: '',
+                icon: '',
+            },
+        },
     });
 
     const options = {
@@ -23,7 +36,7 @@ const useGetCurrentDayData = () => {
 
     const fetchData = async () => {
         const response = await axios.request(options)
-        const dataFetched: Data = await response.data;
+        const dataFetched: CurrentDayData = await response.data;
         setCurrentDayData(dataFetched);
     };
 
