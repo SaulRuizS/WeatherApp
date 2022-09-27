@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { CurrentDayData } from "../models/CurrentDayData.model";
 
-const useGetCurrentDayData = ():CurrentDayData => {
+const useGetCurrentDayData = (location=''):CurrentDayData => {
+
+    const [ query, setQuery ] = useState('monterrey');
 
     const [ currentDayData, setCurrentDayData ] = useState({
         location: {
@@ -27,7 +29,7 @@ const useGetCurrentDayData = ():CurrentDayData => {
     const options = {
         method: 'GET',
         url: 'https://weatherapi-com.p.rapidapi.com/current.json',
-        params: {q: 'monterrey'},
+        params: {q: query},
         headers: {
           'X-RapidAPI-Key': 'ed3b36728amshf11d42c7aaa82aap17c07bjsn7a933a8e5468',
           'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
@@ -35,12 +37,14 @@ const useGetCurrentDayData = ():CurrentDayData => {
     };
 
     const fetchData = async () => {
+        setQuery(location);
         const response = await axios.request(options)
         const dataFetched: CurrentDayData = await response.data;
         setCurrentDayData(dataFetched);
     };
 
     useEffect(() => {
+        // setQuery(location);
         fetchData();
     },[]);
 

@@ -1,9 +1,12 @@
 import React from 'react';
+import useGetCurrentDayData from '../hooks/useGetCurrentDayData';
 import '../assets/styles/Temperature.scss';
 
 const Temperature = () => {
 
-    let temperature:number = 0;
+    const currentDayData = useGetCurrentDayData();
+
+    let temperature:number = currentDayData.current.temp_c;
     let degree:'°C'|'°F';
     degree = '°C';
 

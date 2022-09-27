@@ -1,10 +1,13 @@
 import React from 'react';
+import useGetCurrentDayData from '../hooks/useGetCurrentDayData';
 import '../assets/styles/MoreData.scss';
 
 const MoreData = () => {
 
-    let humidity= 0;
-    let wind= 0;
+    const currentDayData = useGetCurrentDayData();
+
+    let humidity= currentDayData.current.humidity;
+    let wind= currentDayData.current.wind_kph;
     let precipitation= 0;
 
     return (
