@@ -1,3 +1,5 @@
+@import 'vars';
+
 .card {
     display: flex;
     flex-direction: column;
@@ -7,5 +9,5 @@
     width: 80vw;
     padding: 20px 28px 20px 28px;
     border-radius: 40px;
-    background-color: rgb(6, 141, 96);
+    background-color: $soft-black;
 }
