@@ -6,9 +6,9 @@ const MoreData = () => {
 
     const currentDayData = useGetCurrentDayData();
 
-    let humidity= currentDayData.current.humidity;
-    let wind= currentDayData.current.wind_kph;
-    let precipitation= 0;
+    let humidity = currentDayData.current.humidity;
+    let wind = currentDayData.current.wind_kph;
+    let precipitation = 0;
 
     return (
         <div className='more-data'>

@@ -7,7 +7,6 @@ const ForecastSection = () => {
         <div className='forecast'>
             <ForecastCard />
             <ForecastCard />
-            <ForecastCard />
         </div>
     );
 };
