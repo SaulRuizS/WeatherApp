@@ -1,10 +1,23 @@
 import React from 'react';
+import { FutureDay } from '../models/ForecastData.model';
 import '../assets/styles/ForecastCard.scss';
 
-const ForecastCard = () => {
+type ForecastCardProps = {
+    futureDay: FutureDay,
+}
 
-    let date = 'Tuesday';
-    let temperature = 0;
+const ForecastCard = ({
+    futureDay
+}:ForecastCardProps) => {
+
+    function formatDate() {
+        const dateSplited = futureDay.date?.split(' ');
+        const dateFormated = dateSplited?.[0].replace('-','/').replace('-','/');
+        return dateFormated;
+    }
+
+    let date = formatDate();
+    let temperature = futureDay.temperature;
     let degree:'°C'|'°F';
     degree = '°C';
 

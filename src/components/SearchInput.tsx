@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { Dispatch, PropsWithChildren, SetStateAction } from 'react';
 import '../assets/styles/SearchInput.scss';
 
-const SearchInput = () => {
+type queryProps = {
+    query: string,
+    setQuery: React.Dispatch<React.SetStateAction<string>>,
+}
+
+const SearchInput = (props: queryProps) => {
     return (
         <div className='search-input'>
             <form className='' action=''>

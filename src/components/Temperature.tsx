@@ -1,18 +1,20 @@
 import React from 'react';
-import useGetCurrentDayData from '../hooks/useGetCurrentDayData';
+import { ForecastData } from '../models/ForecastData.model';
 import '../assets/styles/Temperature.scss';
 
-const Temperature = () => {
+type temperatureProps = {
+    temperature: number|undefined,
+}
 
-    const currentDayData = useGetCurrentDayData();
+const Temperature = ({temperature}:temperatureProps) => {
 
-    let temperature:number = currentDayData.current.temp_c;
+    let temp = temperature?.toPrecision(2);
     let degree:'°C'|'°F';
     degree = '°C';
 
     return (
         <div className='temperature'>
-            <h1>{temperature}<span>{degree}</span></h1>
+            <h1>{temp}<span>{degree}</span></h1>
         </div>
     );
 };

@@ -1,15 +1,22 @@
 import React from 'react';
-import useGetCurrentDayData from '../hooks/useGetCurrentDayData';
 import '../assets/styles/DateAndLocation.scss';
 
-const DateAndLocation = () => {
+type dateAndLocationProps = {
+    date: string | undefined,
+    locationName: string | undefined,
+    locationCountry: string | undefined,
+}
 
-    const currentDayData = useGetCurrentDayData('monterrey');
+const DateAndLocation = ({
+    date,
+    locationName,
+    locationCountry,
+}:dateAndLocationProps) => {
 
-    function currentDate() {
-        const dateSplited = currentDayData.location.localtime.split(' ');
-        const date = dateSplited[0].replace('-',' ').replace('-',' ');
-        return date;
+    function formatDate() {
+        const dateSplited = date?.split(' ');
+        const dateFormated = dateSplited?.[0].replace('-','/').replace('-','/');
+        return dateFormated;
     }
 
     function weekDay() {
@@ -33,13 +40,14 @@ const DateAndLocation = () => {
         }    
     }
 
-    let date = currentDate();
-    let location = currentDayData.location.name + ', ' + currentDayData.location.country;
+    let currentDate = formatDate();
+
+    let location = locationName + ', ' + locationCountry;
 
     return (
         <div className='date-and-location'>
             <h2 className='date-and-location__day'>{weekDay()}</h2>
-            <h3 className='date-and-location__date'>{date}</h3>
+            <h3 className='date-and-location__date'>{currentDate}</h3>
             <h3 className='date-and-location__location'>{location}</h3>
         </div>
     );

@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SearchInput from './SearchInput';
 import Card from '../containers/Card';
 import '../assets/styles/App.scss';
-import useGetCurrentDayData from '../hooks/useGetCurrentDayData';
-import useGetForecast from '../hooks/useGetForecast';
-
-// const currentDayData = useGetCurrentDayData();
+import useGetForecastData from '../hooks/useGetForecastData';
 
 const App = () => {  
 
-    useGetForecast();
+    const [ query, setQuery ] = useState('monterrey');
+
+    const forecastData = useGetForecastData(query);
 
     return (
             <div className='app'>
-                <SearchInput />
-                <Card />
+                <SearchInput
+                    query={query}
+                    setQuery={setQuery}
+                />
+                <Card
+                    forecastData={forecastData}
+                />
             </div>
     );
 };

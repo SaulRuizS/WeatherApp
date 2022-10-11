@@ -1,14 +1,17 @@
 import React from 'react';
-import useGetCurrentDayData from '../hooks/useGetCurrentDayData';
 import '../assets/styles/MoreData.scss';
 
-const MoreData = () => {
+type cardInfoProps = {
+    humidity: number | undefined,
+    wind: number | undefined,
+    precipitation: number | undefined,
+}
 
-    const currentDayData = useGetCurrentDayData();
-
-    let humidity = currentDayData.current.humidity;
-    let wind = currentDayData.current.wind_kph;
-    let precipitation = 0;
+const CardInfo = ({
+    humidity,
+    wind,
+    precipitation,
+}:cardInfoProps) => {
 
     return (
         <div className='more-data'>
@@ -19,4 +22,4 @@ const MoreData = () => {
     );
 };
 
-export default MoreData;
+export default CardInfo;
