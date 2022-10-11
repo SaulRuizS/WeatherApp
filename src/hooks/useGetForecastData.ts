@@ -8,8 +8,6 @@ const useGetForecastData = (query?: string) => {
 
     const [ forecastData, setForecastData ] = useState(initialData);
 
-    // const [ query, setQuery ] = useState('monterrey');
-
     const options = {
         method: 'GET',
         url: 'https://weatherapi-com.p.rapidapi.com/forecast.json',
@@ -31,7 +29,7 @@ const useGetForecastData = (query?: string) => {
 
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [query]);
 
     console.log(forecastData);
 

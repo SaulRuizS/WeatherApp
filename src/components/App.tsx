@@ -4,9 +4,11 @@ import Card from '../containers/Card';
 import '../assets/styles/App.scss';
 import useGetForecastData from '../hooks/useGetForecastData';
 
-const App = () => {  
+const App = () => {
 
-    const [ query, setQuery ] = useState('monterrey');
+    const initialQuery: string | undefined = 'New York'
+
+    const [ query, setQuery ] = useState(initialQuery);
 
     const forecastData = useGetForecastData(query);
 

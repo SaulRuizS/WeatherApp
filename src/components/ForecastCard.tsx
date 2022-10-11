@@ -17,14 +17,16 @@ const ForecastCard = ({
     }
 
     let date = formatDate();
-    let temperature = futureDay.temperature;
+    let temperatureMax = futureDay.day?.maxtemp_c?.toPrecision(2);
+    let temperatureMin = futureDay.day?.mintemp_c?.toPrecision(2);
     let degree:'°C'|'°F';
     degree = '°C';
 
     return (
         <div className='forecast-card'>
             <p className='forecast-card__date'>{date}</p>
-            <p className='forecast-card__temperature'>{temperature}{degree}</p>
+            <p className='forecast-card__temperature-max'>{temperatureMax}{degree}</p>
+            <p className='forecast-card__temperature-min'>{temperatureMin}{degree}</p>
         </div>
     );
 };

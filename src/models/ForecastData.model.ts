@@ -9,18 +9,23 @@ export interface Current {
     }
 }
 
-export interface Forecast {
-    forecastday?: Array<{
-        date?: string,
-        day?: {
-            condition?: {
-                icon: string,
-            }
-            avgtemp_c?: number,
-            avgtemp_f?: number,
-            daily_chance_of_rain?: number,
+export interface FutureDay {
+    date?: string,
+    day?: {
+        condition?: {
+            text: string,
+            icon: string,
         }
-    }>
+        maxtemp_c?: number,
+        maxtemp_f?: number,
+        mintemp_c?: number,
+        mintemp_f?: number,            
+        daily_chance_of_rain?: number,
+    }
+}
+
+export interface Forecast {
+    forecastday?: Array<FutureDay>
 }
 
 export interface Location {
@@ -34,8 +39,3 @@ export interface ForecastData {
     location?: Location,
 }
 
-export interface FutureDay {
-    date: string | undefined,
-    temperature: number | undefined,
-    condition: string | undefined,
-}

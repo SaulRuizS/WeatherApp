@@ -24,14 +24,12 @@ const Card = ({forecastData}: forecastDataProps) => {
 
     const dayTwo = {
         date: forecastData.forecast?.forecastday?.[1].date,
-        temperature: forecastData.forecast?.forecastday?.[1].day?.avgtemp_c,
-        condition: forecastData.forecast?.forecastday?.[1].day?.condition?.icon,
+        day: forecastData.forecast?.forecastday?.[1].day,
     }
 
     const dayThree = {
         date: forecastData.forecast?.forecastday?.[2].date,
-        temperature: forecastData.forecast?.forecastday?.[2].day?.avgtemp_c,
-        condition: forecastData.forecast?.forecastday?.[2].day?.condition?.icon,
+        day: forecastData.forecast?.forecastday?.[2].day,
     }
 
     return (
