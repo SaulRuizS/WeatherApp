@@ -1,6 +1,25 @@
+@import 'vars';
+
 .temperature {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     font-family: sans-serif;
-    color: aliceblue;
+    color: $soft-white;
+
+    &__icon {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 122px;
+        width: 50%;
+
+        &-img {
+            position: absolute;
+            height: 180px;
+        }
+    }
 
     h1 {
         font-size: 6rem;

@@ -1,0 +1,11 @@
+@import 'vars.scss';
+
+.forecast-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 140px;
+    width: 100%;
+    margin-top: 22px;
+    // background-color: $soft-black;
+}

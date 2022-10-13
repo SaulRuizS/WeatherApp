@@ -1,7 +1,7 @@
 import React from 'react';
 import ForecastCard from '../components/ForecastCard';
 import { FutureDay } from '../models/ForecastData.model';
-import '../assets/styles/Forecast.scss';
+import '../assets/styles/ForecastSection.scss';
 
 type futureForecastProps = {
     dayTwo: FutureDay,
@@ -13,7 +13,7 @@ const ForecastSection = ({
     dayThree
 }:futureForecastProps) => {
     return (
-        <div className='forecast'>
+        <div className='forecast-section'>
             <ForecastCard
                 futureDay={dayTwo}
             />

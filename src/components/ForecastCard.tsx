@@ -17,16 +17,20 @@ const ForecastCard = ({
     }
 
     let date = formatDate();
-    let temperatureMax = futureDay.day?.maxtemp_c?.toPrecision(2);
-    let temperatureMin = futureDay.day?.mintemp_c?.toPrecision(2);
+    const conditionIcon = futureDay.day?.condition?.icon;
+    const temperatureMax = futureDay.day?.maxtemp_c?.toPrecision(2);
+    const temperatureMin = futureDay.day?.mintemp_c?.toPrecision(2);
     let degree:'°C'|'°F';
     degree = '°C';
 
     return (
         <div className='forecast-card'>
             <p className='forecast-card__date'>{date}</p>
-            <p className='forecast-card__temperature-max'>{temperatureMax}{degree}</p>
-            <p className='forecast-card__temperature-min'>{temperatureMin}{degree}</p>
+            <img src={conditionIcon} alt="condition" className='forecast-card__condition-icon'/>
+            <div className='forecast-card__temperature'>
+                <p className='forecast-card__temperature-max'>{temperatureMax}{degree}</p>
+                <p className='forecast-card__temperature-min'>{temperatureMin}{degree}</p>
+            </div>
         </div>
     );
 };

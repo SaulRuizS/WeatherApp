@@ -1,3 +1,5 @@
+@import 'vars.scss';
+
 .search-input {
     height: 100px;
     width: 80vw;
@@ -16,7 +18,13 @@
         width: 80%;
         border-width: 0px;
         border-radius: 8px 0px 0px 8px;
-        font-size: 3rem;
+        padding-inline: 10px;
+        font-size: 2.6rem;
+        background-color: $soft-white;
+
+        &::placeholder {
+            color: $soft-grey;
+        }
     }
 
     &__button {
@@ -26,6 +34,17 @@
         width: 20%;
         border-width: 0px;
         border-radius: 0px 8px 8px 0px;
-        background-color: cadetblue;
+        background-color: $soft-black;
+        background-image: url('https://api.iconify.design/ant-design/search-outlined.svg?color=%23ebebeb');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 30px;
+        cursor: pointer;
+        transition: 200ms;
+
+        &:hover {
+            background-color: $soft-grey;
+            transition: 200ms;
+        }
     }
 }

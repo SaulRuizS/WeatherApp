@@ -13,6 +13,7 @@ type forecastDataProps = {
 const Card = ({forecastData}: forecastDataProps) => {
 
     let temperature = forecastData.current?.temp_c;
+    let conditionIcon = forecastData.current?.condition?.icon;
 
     let humidity = forecastData.current?.humidity;
     let wind = forecastData.current?.wind_kph;
@@ -41,6 +42,7 @@ const Card = ({forecastData}: forecastDataProps) => {
             />
             <Temperature
                 temperature={temperature}
+                conditionIcon={conditionIcon}
             />
             <CardInfo
                 humidity={humidity}

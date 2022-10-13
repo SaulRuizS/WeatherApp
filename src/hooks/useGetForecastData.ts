@@ -31,7 +31,7 @@ const useGetForecastData = (query?: string) => {
         fetchData();
     }, [query]);
 
-    console.log(forecastData);
+    // console.log(forecastData);
 
     return forecastData;
 };

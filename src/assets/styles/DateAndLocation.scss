@@ -1,5 +1,20 @@
+@import 'vars.scss';
+
 .date-and-location {
     font-family: sans-serif;
     font-size: 3rem;
-    color: aliceblue;
+    color: $soft-white;
+
+    &__day {
+        font-size: 2rem;
+    }
+
+    &__date {
+        font-size: 1.6rem;
+    }
+
+    &__location {
+        margin-top: 6px;
+        font-size: 2.4rem;
+    }
 }

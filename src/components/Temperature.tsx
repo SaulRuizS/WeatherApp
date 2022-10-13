@@ -4,9 +4,13 @@ import '../assets/styles/Temperature.scss';
 
 type temperatureProps = {
     temperature: number|undefined,
+    conditionIcon: string|undefined,
 }
 
-const Temperature = ({temperature}:temperatureProps) => {
+const Temperature = ({
+    temperature,
+    conditionIcon,
+}:temperatureProps) => {
 
     let temp = temperature?.toPrecision(2);
     let degree:'°C'|'°F';
@@ -14,6 +18,9 @@ const Temperature = ({temperature}:temperatureProps) => {
 
     return (
         <div className='temperature'>
+            <div className='temperature__icon'>
+                <img src={conditionIcon} alt="condition" className='temperature__icon-img'/>
+            </div>
             <h1>{temp}<span>{degree}</span></h1>
         </div>
     );
