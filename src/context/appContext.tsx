@@ -1,10 +1,7 @@
 import React,{ createContext } from "react";
-import useGetCurrentDayData from "../hooks/useGetCurrentDayData";
-
-const currentDayData = useGetCurrentDayData;
 
 
-const AppContext = createContext(currentDayData);
+// const AppContext = createContext(currentDayData);
 
 // function AppProvider(props) {
 //     return (
@@ -14,4 +11,4 @@ const AppContext = createContext(currentDayData);
 //     )
 // }
 
-export default AppContext;
+// export default AppContext;
