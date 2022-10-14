@@ -35,20 +35,22 @@ const Card = ({forecastData}: forecastDataProps) => {
 
     return (
         <div className='card'>
-            <DateAndLocation
-                date={date}
-                locationName={locationName}
-                locationCountry={locationCountry}
-            />
-            <Temperature
-                temperature={temperature}
-                conditionIcon={conditionIcon}
-            />
-            <CardInfo
-                humidity={humidity}
-                wind={wind}
-                precipitation={precipitation}
-            />
+            <div className='card__current-info'>
+                <DateAndLocation
+                    date={date}
+                    locationName={locationName}
+                    locationCountry={locationCountry}
+                />
+                <Temperature
+                    temperature={temperature}
+                    conditionIcon={conditionIcon}
+                />
+                <CardInfo
+                    humidity={humidity}
+                    wind={wind}
+                    precipitation={precipitation}
+                />
+            </div>
             <ForecastSection
                 dayTwo={dayTwo}
                 dayThree={dayThree}

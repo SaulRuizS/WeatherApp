@@ -2,6 +2,7 @@
 
 .search-input {
     height: 100px;
+    min-width: 300px;
     width: 80vw;
 
     form {
@@ -34,7 +35,7 @@
         width: 20%;
         border-width: 0px;
         border-radius: 0px 8px 8px 0px;
-        background-color: $soft-black;
+        background-color: $transparent-black;
         background-image: url('https://api.iconify.design/ant-design/search-outlined.svg?color=%23ebebeb');
         background-position: center;
         background-repeat: no-repeat;
@@ -43,8 +44,30 @@
         transition: 200ms;
 
         &:hover {
-            background-color: $soft-grey;
+            background-color: $soft-black;
             transition: 200ms;
         }
     }
+}
+
+@media (min-width: 600px) {
+    .search-input {
+        max-width: 70vw;
+
+        form {
+            height: 54px;
+        }
+    }
+    
+}
+
+@media (min-width: 834px) {
+    .search-input {
+        max-width: 584px;
+
+        form {
+            height: 54px;
+        }
+    }
+    
 }

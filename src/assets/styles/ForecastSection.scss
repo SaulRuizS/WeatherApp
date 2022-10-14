@@ -7,5 +7,27 @@
     height: 140px;
     width: 100%;
     margin-top: 22px;
-    // background-color: $soft-black;
+}
+
+@media (min-width: 600px) {
+    .forecast-section {
+        flex-direction: column;
+        justify-content: center;
+        align-items:flex-end;
+        height: 100%;
+        width: 40%;
+        margin-top: 0px;
+    }
+}
+
+@media (min-width: 910px) {
+    .forecast-section {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        width: 50%;
+        max-width: 390px;
+        margin-top: 0px;
+    }
 }
